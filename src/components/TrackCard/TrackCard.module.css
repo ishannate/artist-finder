@@ -1,0 +1,41 @@
+.card {
+  border: 1px rgb(203, 201, 201) solid;
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: gray;
+}
+
+.artist_title {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(73, 73, 73);
+}
+
+.duration {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.listen_button {
+  border: none;
+  background: none;
+  color: rgb(0, 188, 235);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0;
+}
+
+.favorite {
+  color: red;
+}
+
+.album_image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}

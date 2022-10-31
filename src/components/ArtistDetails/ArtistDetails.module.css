@@ -1,0 +1,55 @@
+.header {
+  font-size: 28px;
+  font-weight: 600;
+  color: rgb(255, 255, 255);
+}
+
+.artist_image {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  border: 2px rgb(0, 154, 210) solid;
+}
+
+.stat_label {
+  color: rgb(164, 164, 164);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.stat_value {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.stats_banner {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.581);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.sub_header {
+  font-size: 18px;
+}
+
+.text {
+  color: gray;
+}
+
+.link {
+  color: rgb(0, 180, 252);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tag {
+  color: rgb(79, 79, 79);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tag:hover {
+  color: rgb(0, 180, 252);
+}

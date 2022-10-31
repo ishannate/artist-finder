@@ -1,0 +1,75 @@
+.image {
+  min-width: 250px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.tag {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.tag:hover {
+  color: rgb(0, 180, 252);
+}
+
+.back_button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border: none;
+  background: rgba(0, 0, 0, 0.341);
+  color: white;
+  border-radius: 50%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0;
+}
+
+.back_button:hover {
+  border: 1px rgb(0, 120, 168) solid;
+}
+
+.listen_button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  color: rgb(0, 188, 235);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 0;
+}
+
+.content {
+  position: relative;
+}
+
+.stats_banner {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.765);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.stat_label {
+  color: rgb(164, 164, 164);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.stat_value {
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: 600;
+}

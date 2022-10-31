@@ -1,0 +1,16 @@
+.title {
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 0px;
+}
+.image {
+  border-radius: 10px;
+  min-width: 180px;
+  min-height: 180px;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: 700;
+}

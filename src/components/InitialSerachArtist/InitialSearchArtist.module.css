@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  padding-top: 24px;
+  padding-left: 24px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  background: rgba(0, 0, 0, 0.477);
+}
+
+.header {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.description {
+  color: white;
+  font-weight: 600;
+}
