@@ -1,3 +1,4 @@
+/* istanbul ignore file */
 import type { FC } from "react";
 import { useAlbum } from "../../hooks/useAlbum";
 import { AlbumCard } from "./AlbumCard";

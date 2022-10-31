@@ -1,11 +1,16 @@
-# Getting Started with Create React App
+# Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Install node to your machine
+Check if node is installed by opening a terminal and running `node -v`
+if the command is not identified download the LTS version from https://nodejs.org/en/
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `npm install`
+
+Installs all the third party libraries/packages needed for the application to run
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -29,18 +34,32 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+#### Notes
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+##### completed tasks
+    Albums overview
+        Page showing artist details and all the albums of the selected artist with thumbnail, name and year
+        Albums are sorted by name (ascending order).
+    Album detail view
+        Album details page showing album details and all the tracks listed.
+        User can tap/select a favourite song to add to favourites or remove from it.
+        User can add a song to favourites from either album detailed view or by navigating to songs url from the button in the header and searching for a song title and clicking on the heart icon.
+    Songs page - Search a song | Favourites overview page | Favourites
+        All the songs selected for favourites will be shown this page with track name, duration, album and a link to listen the song from Last.fm.
+        User can unselect a song from the favourites by clicking on the heart icon in-front of the relevant song.
+        User can search a song from the search functionality provided and click on the heart icon in-front of the record and push it to the favourites list.
+##### Completed Must Haves
+    React with ES6+.
+    Usage of modular styling.
+    Typescript.
+    Styled components
+    Redux
+##### Completed extra points
+    Responsiveness
+    Unit test cases - 3 components (TitleCard, AlbumDetails, AlbumCard)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Todo
+    Best played graph
+    Server side rendering
+    Usage of a linter
+    Personal web-pack configuration

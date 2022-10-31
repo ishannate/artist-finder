@@ -27,7 +27,8 @@ const AlbumCard: FC<AlbumCardProps> = ({ album, onClick }) => {
 
   return (
     <div
-      className="col-12 col-md-6 col-lg-4 d-flex flex-column mb-3 gap-md-3 gap-3 justify-content-between "
+      className="col-12 col-md-6 col-lg-4 d-flex flex-column mb-3 gap-md-3 gap-3 justify-content-between"
+      aria-label="album-card"
       onClick={() => {
         onClick(album.artist, album.name);
       }}

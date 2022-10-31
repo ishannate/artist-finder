@@ -1,7 +1,7 @@
 interface Wiki {
     content: string;
     published: string;
-    sumary: string;
+    summary: string;
 }
 
 

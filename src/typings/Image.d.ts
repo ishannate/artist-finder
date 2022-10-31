@@ -1,7 +1,7 @@
 
 interface Image {
     size: string;
-    text: sring;
+    text: string;
 }
 
 export { Image };

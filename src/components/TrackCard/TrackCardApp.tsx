@@ -1,5 +1,7 @@
+/* istanbul ignore file */
 import { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { openInNewTab } from "../../helpers/helpers";
 import { useTrack } from "../../hooks/useTrack";
 import { FavouriteSong, updateFavList } from "../../redux/FavoriteSongsReducer";
 import { TrackCard } from "./TrackCard";
@@ -72,6 +74,7 @@ const TrackCardApp: FC<TarckCardAppProps> = ({
       isTrackInFavList={isTrackInFavList}
       onFavSelectDeselect={onFavSelectDeselect}
       isAlbumShown={isAlbumShown}
+      onOpen={openInNewTab}
     />
   );
 };

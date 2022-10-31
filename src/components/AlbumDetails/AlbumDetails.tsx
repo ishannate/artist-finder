@@ -36,6 +36,7 @@ const AlbumDetails: FC<AlbumDetailsProps> = ({ album, onBack }) => {
       className={`bg-dark d-flex flex-column flex-md-row px-0 ${styles.content}`}
     >
       <button
+        aria-label="back-button"
         type="button"
         onClick={onBack}
         className={`${styles.back_button} mt-2`}
@@ -47,6 +48,7 @@ const AlbumDetails: FC<AlbumDetailsProps> = ({ album, onBack }) => {
         />
       </button>
       <button
+        aria-label="open-in-tab"
         type="button"
         className={`${styles.listen_button}  d-flex align-items-center`}
         onClick={() => openInNewTab(album.url)}
@@ -63,13 +65,17 @@ const AlbumDetails: FC<AlbumDetailsProps> = ({ album, onBack }) => {
         <div className="d-flex flex-column  px-4 py-4">
           <p className={`text-white mb-0 ${styles.title}`}>{album.name}</p>
           <p className="text-white mb-0">Arist : {album.artist}</p>
+          {/* istanbul ignore next */}
           {album.tags && (
             <div className="d-flex flex-wrap justify-content-start gap-3 mt-4 mb-4">
               {album.tags.tag.map((tag: Tag) => (
                 <TagLabel
                   key={tag.url}
                   textColor="white"
-                  onClick={() => openInNewTab(tag.url)}
+                  onClick={() => {
+                    /* istanbul ignore next */
+                    openInNewTab(tag.url);
+                  }}
                 >
                   {tag.name}
                 </TagLabel>

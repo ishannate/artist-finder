@@ -3,7 +3,7 @@ import { Tag } from "./Tag";
 import { Wiki } from "./Wiki";
 
 interface Track {
-  streamable: Streamable;
+  streamable?: Streamable;
   mbid?: string;
   duration: number | null;
   name: string;
@@ -13,7 +13,7 @@ interface Track {
     rank: number,
     position: number
   }
-  album: DisplayAlbum;
+  album?: DisplayAlbum;
   listeners: number;
   playcount: number;
   topTags: { tag: Tag[] }

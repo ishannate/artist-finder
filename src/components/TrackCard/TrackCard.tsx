@@ -6,11 +6,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { FC } from "react";
 import { useState, useEffect } from "react";
-import {
-  openInNewTab,
-  removeCharacterFromObject,
-  secondsToHMS,
-} from "../../helpers/helpers";
+import { removeCharacterFromObject, secondsToHMS } from "../../helpers/helpers";
 import { Image } from "../../typings/Image";
 import { Track } from "../../typings/Track";
 import styles from "./TrackCard.module.css";
@@ -20,6 +16,7 @@ interface TrackCardProps {
   isTrackInFavList: boolean;
   onFavSelectDeselect: () => void;
   isAlbumShown: boolean;
+  onOpen: (url: string) => void;
 }
 
 const TrackCard: FC<TrackCardProps> = ({
@@ -27,27 +24,25 @@ const TrackCard: FC<TrackCardProps> = ({
   isTrackInFavList,
   onFavSelectDeselect,
   isAlbumShown,
+  onOpen,
 }) => {
-  const [modifiedTrack, setModifiedTrack] = useState<Track>();
   const [imageUrl, setImageUrl] = useState("");
 
   useEffect(() => {
-    if (track.album !== undefined && track.album.image && imageUrl === "") {
+    if (
+      track.album !== undefined &&
+      track.album.image &&
+      track.album.image.length > 0 &&
+      imageUrl === ""
+    ) {
       const val = removeCharacterFromObject(
-        track.album.image.find((image: Image) => image.size === "small") || {},
+        track.album.image.find((image: Image) => image.size === "small"),
         "#"
       );
       setImageUrl(val.text);
     }
   }, [track, imageUrl]);
 
-  useEffect(() => {
-    setModifiedTrack(removeCharacterFromObject(track, "@"));
-  }, [track]);
-
-  if (!modifiedTrack) {
-    return null;
-  }
   return (
     <div
       className={`${styles.card} py-2 px-4 d-flex flex-wrap align-items-center justify-content-between`}
@@ -59,15 +54,16 @@ const TrackCard: FC<TrackCardProps> = ({
             isTrackInFavList ? styles.favourite : ""
           } ${styles.selector}`}
           title="Listen on"
+          aria-label="fav-select"
           onClick={onFavSelectDeselect}
         />
       </div>
       <div className="col-2 col-md-1 d-flex align-items-center justify-content-end justify-content-md-start">
-        {modifiedTrack.duration ? (
+        {track.duration ? (
           <span
             className={`mb-0 d-flex justify-content-center ${styles.duration}`}
           >
-            {secondsToHMS(modifiedTrack.duration || 0)}
+            {secondsToHMS(track.duration)}
           </span>
         ) : (
           <span className="mb-0">---</span>
@@ -80,15 +76,15 @@ const TrackCard: FC<TrackCardProps> = ({
       >
         <p
           className={`mb-0 text-truncate px-2 ${styles.title}`}
-          title={modifiedTrack.name}
+          title={track.name}
         >
           <FontAwesomeIcon icon={faRecordVinyl} className="mb-0 me-2" />
-          {modifiedTrack.name}
+          {track.name}
         </p>
       </div>
       {isAlbumShown && (
         <div className="col-7 col-md-3 d-flex align-items-center gap-2 justify-content-start">
-          {modifiedTrack?.album ? (
+          {track.album ? (
             <>
               <img
                 alt="album-cover"
@@ -96,7 +92,7 @@ const TrackCard: FC<TrackCardProps> = ({
                 className={styles.album_image}
               />
               <p className={`mb-0 ms-4 ${styles.artist_title}`}>
-                {modifiedTrack.album.title}
+                {track.album.title}
               </p>
             </>
           ) : (
@@ -106,9 +102,10 @@ const TrackCard: FC<TrackCardProps> = ({
       )}
       <div className="col-5 col-md-2 d-flex justify-content-end">
         <button
+          aria-label="listen-on-last-fm"
           type="button"
           className={`${styles.listen_button}  d-flex align-items-center`}
-          onClick={() => openInNewTab(modifiedTrack.url)}
+          onClick={() => onOpen(track.url)}
         >
           <FontAwesomeIcon
             icon={faRadio}
