@@ -7,15 +7,17 @@ import { Provider } from "react-redux";
 import configureStore from "./redux/configureStore";
 import { APIContext } from "./context/APIContext";
 
-const API_URL = "https://ws.audioscrobbler.com";
-const API_KEY = "d732731be2f5f0ec4b10e5a3607d7090";
-
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <APIContext.Provider value={{ apiUrl: API_URL, apiKey: API_KEY }}>
+    <APIContext.Provider
+      value={{
+        apiUrl: process.env.REACT_APP_API_URL || "",
+        apiKey: process.env.REACT_APP_API_KEY || "",
+      }}
+    >
       <Provider store={configureStore}>
         <App />
       </Provider>
