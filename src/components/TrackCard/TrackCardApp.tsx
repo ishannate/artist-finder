@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTrack } from "../../hooks/useTrack";
-import { FavoriteSong, updateFavList } from "../../redux/FavoriteSongsReducer";
+import { FavouriteSong, updateFavList } from "../../redux/FavoriteSongsReducer";
 import { TrackCard } from "./TrackCard";
 
 interface TarckCardAppProps {
@@ -18,21 +18,24 @@ const TrackCardApp: FC<TarckCardAppProps> = ({
   const { track } = useTrack(artistName, name);
   const dispatch = useDispatch();
   const [isTrackInFavList, setIsTrackInFavList] = useState(false);
-  const { favoriteList } = useSelector((state: any) => state.favoriteSongs);
+  const { favouriteList } = useSelector((state: any) => state.favouriteSongs);
 
   useEffect(() => {
     if (track && !(track instanceof Error)) {
       if (
-        favoriteList.find((item: FavoriteSong) => item.mbid === track.mbid) ||
-        favoriteList.find(
-          (item: FavoriteSong) =>
-            item.name === track.name && item.artistName === track.artist.name
+        favouriteList.find(
+          (item: FavouriteSong) =>
+            item.name === track.name &&
+            item.artistName === track.artist.name &&
+            item.mbid === track.mbid
         )
       ) {
         setIsTrackInFavList(true);
+      } else {
+        setIsTrackInFavList(false);
       }
     }
-  }, [favoriteList, track]);
+  }, [favouriteList, track]);
 
   if (!track) {
     return null;
@@ -43,18 +46,15 @@ const TrackCardApp: FC<TarckCardAppProps> = ({
   }
 
   const onFavSelectDeselect = () => {
-    const tempList = [...favoriteList];
+    const tempList = [...favouriteList];
     if (isTrackInFavList) {
-      dispatch(
-        updateFavList(
-          tempList.filter(
-            (item: FavoriteSong) =>
-              item.artistName !== track.artist.name &&
-              item.name !== track.name &&
-              item.mbid !== track.mbid
-          )
-        )
+      const value = tempList.filter(
+        (item: FavouriteSong) =>
+          item.mbid !== track.mbid ||
+          (item.artistName !== track.artist.name && item.name !== track.name)
       );
+      dispatch(updateFavList(value));
+      setIsTrackInFavList(false);
     } else {
       tempList.push({
         name: track.name,
@@ -62,8 +62,8 @@ const TrackCardApp: FC<TarckCardAppProps> = ({
         mbid: track.mbid,
       });
       dispatch(updateFavList(tempList));
+      setIsTrackInFavList(true);
     }
-    dispatch(updateFavList);
   };
 
   return (

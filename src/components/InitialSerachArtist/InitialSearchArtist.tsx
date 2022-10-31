@@ -9,7 +9,7 @@ const InitialSearchArtist: FC = () => {
 
   return (
     <div className={`${styles.container} shadow`}>
-      <p className={`mb-4 ${styles.header}`}>Search your favorite artist</p>
+      <p className={`mb-4 ${styles.header}`}>Search your favourite artist</p>
       <SearchArtistApp searchedArtistName={searchedArtistName} />
       <div className="d-flex flex-column align-items-center">
         <div className="col-12 col-md-6 my-5 d-flex flex-wrap justify-content-center gap-4">
@@ -50,11 +50,11 @@ const InitialSearchArtist: FC = () => {
           <p className={styles.description}>
             We bring together your favourite music services and join up
             listening, watching and sharing to connect your musical world.
-            Search your favorite artsits from Last FM and get all the album
+            Search your favourite artsits from Last FM and get all the album
             details and tracks for each album.
           </p>
           <p className={styles.description}>
-            your favorite tracks to your personalized favorites list and listen
+            your favourite tracks to your personalized favorites list and listen
             to them in last FM
           </p>
         </div>

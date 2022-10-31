@@ -56,8 +56,8 @@ const TrackCard: FC<TrackCardProps> = ({
         <FontAwesomeIcon
           icon={faHeart}
           className={`py-1 mb-0 me-2 ${
-            isTrackInFavList ? styles.favorite : ""
-          }`}
+            isTrackInFavList ? styles.favourite : ""
+          } ${styles.selector}`}
           title="Listen on"
           onClick={onFavSelectDeselect}
         />

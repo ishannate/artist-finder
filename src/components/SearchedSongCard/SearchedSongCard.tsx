@@ -38,7 +38,7 @@ const SearchedSongCard: FC<SearchedSongCardProps> = ({
         <FontAwesomeIcon
           icon={faHeart}
           className={`py-1 mb-0 me-2 ${
-            isTrackInFavList ? styles.favorite : ""
+            isTrackInFavList ? styles.favourite : ""
           }`}
           title="Listen on"
           onClick={onFavSelect}

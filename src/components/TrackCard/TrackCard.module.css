@@ -30,7 +30,7 @@
   margin-bottom: 0;
 }
 
-.favorite {
+.favourite {
   color: red;
 }
 
@@ -38,4 +38,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+}
+
+.selector {
+  cursor: pointer;
 }

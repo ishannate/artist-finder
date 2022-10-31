@@ -1,18 +1,18 @@
 import type { FC } from "react";
 import { useState } from "react";
-import { FavoriteSong } from "../../redux/FavoriteSongsReducer";
+import { FavouriteSong } from "../../redux/FavoriteSongsReducer";
 import { SearchTrack } from "../../typings/Track";
 import { SearchedSongCardApp } from "../SearchedSongCard/SearchedSongCardApp";
 import { TrackCardApp } from "../TrackCard/TrackCardApp";
 import styles from "./Songs.module.css";
 
 interface SongsProps {
-  favoriteList: FavoriteSong[];
+  favouriteList: FavouriteSong[];
   onSearchSong: (name: string) => void;
   searchList: SearchTrack[] | undefined;
 }
 
-const Songs: FC<SongsProps> = ({ favoriteList, onSearchSong, searchList }) => {
+const Songs: FC<SongsProps> = ({ favouriteList, onSearchSong, searchList }) => {
   const [searchName, setSearchName] = useState("");
 
   const onNameChange = (name: string) => {
@@ -50,9 +50,9 @@ const Songs: FC<SongsProps> = ({ favoriteList, onSearchSong, searchList }) => {
         )}
       </div>
 
-      <div className="w-100 px-4 mt-5">
-        <p className={`${styles.sub_header} mb-3`}>Favorite Songs List</p>
-        {favoriteList.map((item: FavoriteSong) => (
+      <div className="w-100 px-4 mt-5 pb-5">
+        <p className={`${styles.sub_header} mb-3`}>Favourite Songs List</p>
+        {favouriteList.map((item: FavouriteSong) => (
           <TrackCardApp
             key={item.name + item.mbid}
             name={item.name}

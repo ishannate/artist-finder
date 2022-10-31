@@ -6,7 +6,7 @@ import { SearchTrack } from "../../typings/Track";
 import { Songs } from "./Songs";
 
 const SongsApp: FC = () => {
-  const { favoriteList } = useSelector((state: any) => state.favoriteSongs);
+  const { favouriteList } = useSelector((state: any) => state.favouriteSongs);
   const [searchedSongsList, setSearchedSongsList] = useState<SearchTrack[]>();
   const { searchTrackByName } = useTrack();
 
@@ -21,7 +21,7 @@ const SongsApp: FC = () => {
 
   return (
     <Songs
-      favoriteList={favoriteList}
+      favouriteList={favouriteList}
       onSearchSong={onSearchSong}
       searchList={searchedSongsList}
     />

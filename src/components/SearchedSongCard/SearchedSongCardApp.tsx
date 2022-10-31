@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FavoriteSong, updateFavList } from "../../redux/FavoriteSongsReducer";
+import { FavouriteSong, updateFavList } from "../../redux/FavoriteSongsReducer";
 import { SearchedSongCard } from "./SearchedSongCard";
 
 interface SearchedSongCardAppProps {
@@ -17,15 +17,15 @@ const SearchedSongCardApp: FC<SearchedSongCardAppProps> = ({
   mbid,
 }) => {
   const dispatch = useDispatch();
-  const { favoriteList } = useSelector((state: any) => state.favoriteSongs);
+  const { favouriteList } = useSelector((state: any) => state.favouriteSongs);
 
   const onSelectFav = (isTrackInFavList: boolean) => {
-    const tempList = [...favoriteList];
+    const tempList = [...favouriteList];
     if (isTrackInFavList) {
       dispatch(
         updateFavList(
           tempList.filter(
-            (item: FavoriteSong) =>
+            (item: FavouriteSong) =>
               item.artistName !== artist &&
               item.name !== name &&
               item.mbid !== mbid

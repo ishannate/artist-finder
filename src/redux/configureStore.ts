@@ -6,7 +6,7 @@ import FavoriteSongsReducer from "./FavoriteSongsReducer";
 export default configureStore({
   reducer: {
     artist: artistNameReducter,
-    favoriteSongs: FavoriteSongsReducer,
+    favouriteSongs: FavoriteSongsReducer,
     artistImage: ArtistImageReducer
   },
 });
