@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   top: 0;
-  background: rgba(10, 18, 24, 0.67);
+  background: rgba(10, 18, 24, 0.771);
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   max-height: 200px;
@@ -32,4 +32,10 @@
 
 .container {
   position: relative;
+}
+
+.positioned {
+  position: absolute;
+  top: 10px;
+  right: 0;
 }

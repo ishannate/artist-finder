@@ -5,6 +5,7 @@ import { Album } from "../../typings/Album";
 import { Image } from "../../typings/Image";
 import Moment from "moment";
 import styles from "./AlbumCard.module.css";
+import { Audio } from "react-loader-spinner";
 
 interface AlbumCardProps {
   album: Album;
@@ -32,7 +33,18 @@ const AlbumCard: FC<AlbumCardProps> = ({ album, onClick }) => {
       }}
     >
       <div>
-        <img alt="album" src={imageUrl} className={`${styles.image} w-100`} />
+        {imageUrl !== "" ? (
+          <img alt="album" src={imageUrl} className={`${styles.image} w-100`} />
+        ) : (
+          <div className="d-flex justify-content-center centered my-5">
+            <Audio
+              height="30"
+              width="30"
+              color="#275c82"
+              ariaLabel="three-dots-loading"
+            />
+          </div>
+        )}
         <p className={`${styles.title}`}>{album.name}</p>
       </div>
       <p>Year : {Moment(album.wiki?.published).format("yyyy")}</p>

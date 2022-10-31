@@ -36,6 +36,8 @@
 
 .text {
   color: gray;
+  overflow-x: hidden;
+  word-break: break-word;
 }
 
 .link {
