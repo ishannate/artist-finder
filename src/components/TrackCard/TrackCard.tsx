@@ -100,7 +100,11 @@ const TrackCard: FC<TrackCardProps> = ({
           )}
         </div>
       )}
-      <div className="col-5 col-md-2 d-flex justify-content-end">
+      <div
+        className={`${
+          isAlbumShown ? "col-5" : "col-12"
+        } col-md-2 d-flex justify-content-end`}
+      >
         <button
           aria-label="listen-on-last-fm"
           type="button"

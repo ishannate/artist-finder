@@ -39,7 +39,7 @@ const AlbumCard: FC<AlbumCardProps> = ({ album, onClick }) => {
         ) : (
           <div className="d-flex justify-content-center centered my-5">
             <Audio
-              height="30"
+              height="170"
               width="30"
               color="#275c82"
               ariaLabel="three-dots-loading"
