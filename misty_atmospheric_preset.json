@@ -1,0 +1,13 @@
+{
+  "name": "Misty Atmospheric",
+  "description": "Creates a soft, misty, atmospheric look",
+  "adjustments": {
+    "brightness": 0.9281167313772964,
+    "contrast": 0.8484436611893117,
+    "saturation": 0.9858629664904486,
+    "blur_radius": 1.5,
+    "vignette_strength": 0.15,
+    "color_temperature": "cooler",
+    "temperature_shift": -10.243561608686264
+  }
+}

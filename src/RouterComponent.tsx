@@ -2,6 +2,7 @@ import type { FC } from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { SongsPage } from "./pages/SongsPage/SongsPage";
+import { ImagePresetPage } from "./pages/ImagePresetPage/ImagePresetPage";
 
 const RouterComponent: FC = () => {
   return (
@@ -9,6 +10,7 @@ const RouterComponent: FC = () => {
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/songs" element={<SongsPage />}></Route>
+        <Route path="/image-preset" element={<ImagePresetPage />}></Route>
       </Routes>
     </BrowserRouter>
   );

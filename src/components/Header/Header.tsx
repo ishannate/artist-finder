@@ -26,6 +26,17 @@ const Header: FC = () => {
             Songs
           </Button>
         </div>
+        <div>
+          <Button
+            transparent
+            textColor="red"
+            onClick={() => {
+              navigate("/image-preset");
+            }}
+          >
+            Image Preset
+          </Button>
+        </div>
       </div>
       <div className={`col-12 col-md-4 d-flex flex-column ${styles.container}`}>
         <div className={` ${styles.positioned} w-100`}>
